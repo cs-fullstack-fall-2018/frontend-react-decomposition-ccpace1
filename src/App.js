@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-// import logo from './logo.svg';
-import logo from './todopostit.png';
 import './App.css';
-
+import Header from './Header'
 import AddToDo from "./AddTodo";
-import ListToDoV2 from './ListToDoV2.js';
+import ListToDoV2 from './ListToDoV2';
 
 // Setup a couple vars for the API. Not the best way but works for this example
 const todoListEndpoint = "http://localhost:3001/api/todos/";
@@ -93,10 +91,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">{this.state.appTitle}</h1>
-                </header>
+                <Header title={this.state.appTitle}/>
                 <div>
                     <AddToDo clicked={this.clickAdd}/>
                 </div>
